@@ -1,0 +1,35 @@
+separator=false
+
+[bitcoin]
+command=curl https://coinmarketcap.com/currencies/bitcoin/ 2>/dev/null | grep -o -P "<div class=\"priceValue___11gHJ\">.*?</div>" | grep -Po "[\d|,]+\.\d+" | awk '{print "BTC: $" $1 " |"}'
+interval=120
+
+[dogecoin]
+command=curl https://coinmarketcap.com/currencies/dogecoin/ 2>/dev/null | grep -o -P "<div class=\"priceValue___11gHJ\">.*?</div>" | grep -Po "[\d|,]+\.\d+" | awk '{print "DOGE: $" $1 " |"}'
+interval=120
+
+[stellar]
+command=curl https://coinmarketcap.com/currencies/stellar/ 2>/dev/null | grep -o -P "<div class=\"priceValue___11gHJ\">.*?</div>" | grep -Po "[\d|,]+\.\d+" | awk '{print "XLM: $" $1 " |"}'
+interval=120
+
+[volume]
+command=pactl list sinks | grep "Volume: front-left" | awk '{print "🔊 " $5}'
+interval=5
+
+[ipv4]
+command=hostname -i | awk '{print "IPv4:",$1," |"}'
+interval=once
+color=#00FF00
+
+[ipv6]
+command=ifconfig | grep 200 | awk '{print "IPv6:",$2}'
+interval=once
+color=#00FF00
+
+[cpu]
+command=uptime | awk '{gsub(",","");print "load:",$(NF-2)}'
+interval=5
+
+[time]
+command=date +%H:%M
+interval=5
