@@ -21,6 +21,8 @@ bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
 bindsym $mod+o exec --no-startup-id notify-send --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
 bindsym $mod+u exec --no-startup-id notify-send --icon=~/.cache/nba_icon.png "NBA Standings" "$(nbaStandings)"
+bindsym $mod+y exec --no-startup-id notify-send "Weather" "$(weather)"
+bindsym $mod+m exec --no-startup-id notify-send "School schedule" "$(orarioUniversita)"
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
