@@ -19,10 +19,13 @@ exec --no-startup-id dunst
 #exec --no-startup-id nm-applet
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
-bindsym $mod+o exec --no-startup-id notify-send --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
-bindsym $mod+u exec --no-startup-id notify-send --icon=~/.cache/nba_icon.png "NBA Standings" "$(nbaStandings)"
-bindsym $mod+y exec --no-startup-id notify-send "Weather" "$(weather)"
-bindsym $mod+m exec --no-startup-id notify-send "School schedule" "$(orarioUniversita)"
+bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
+bindsym $mod+u exec --no-startup-id notify-send -t 0 --icon=~/.cache/nba_icon.png "NBA Standings" "$(nbaStandings)"
+bindsym $mod+y exec --no-startup-id notify-send -t 0 "Weather" "$(weather)"
+bindsym $mod+m exec --no-startup-id notify-send -t 0 --icon=~/.cache/unimi_icon.jpg "School schedule" "$(orarioUniversita)"
+bindsym $mod+n exec --no-startup-id notify-send -t 0 --icon=~/.cache/unimi_icon.jpg "School schedule" "$(orarioUniversita next)"
+bindsym $mod+b exec --no-startup-id random_xkcd
+bindsym $mod+c exec --no-startup-id notify-send -t 0 "Info ATM" "$(info_atm)"
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
@@ -67,7 +70,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

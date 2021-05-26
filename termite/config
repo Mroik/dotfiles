@@ -4,7 +4,8 @@
 # Code licensed under the MIT license
 
 [options]
-font = Monospace 9
+#font = Monospace 9
+font = Cozette 11
 audible_bell = true
 browser = brave
 
