@@ -5,6 +5,12 @@ visual_bell:
   animation: EaseOutExpo
   duration: 5
 
+tabspaces: 4
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
 #font:
 #  normal:
 #    family: Monospace
