@@ -32,6 +32,8 @@ bindsym --release $mod+backslash bar hidden_state hide
 bindsym $mod+k bar mode dock
 bindsym $mod+j bar mode hide
 exec --no-startup-id sh ~/Programs/dual_monitor.sh
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
 
 # i3 config file (v4)
 #
