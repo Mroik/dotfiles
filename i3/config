@@ -31,6 +31,7 @@ bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
 bindsym $mod+k bar mode dock
 bindsym $mod+j bar mode hide
+exec --no-startup-id sh ~/Programs/dual_monitor.sh
 
 # i3 config file (v4)
 #
@@ -51,7 +52,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/Pictures/wallpaper.png
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i ~/Pictures/wallpaper.png -t
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -226,4 +227,32 @@ bar {
 	binding_mode_indicator yes
 	strip_workspace_numbers yes
 	strip_workspace_name yes
+
+	output DVI-D-0
+	tray_output DVI-D-0
+}
+
+bar {
+        #status_command i3status
+	status_command i3blocks -c ~/.config/i3blocks/config_2
+	mode hide
+	modifier none
+	position top
+	colors {
+		background #282A36
+		statusline #F8F8F2
+    		separator #44475A
+
+		focused_workspace  #44475A #44475A #F8F8F2
+		active_workspace   #282A36 #44475A #F8F8F2
+		inactive_workspace #282A36 #282A36 #BFBFBF
+		urgent_workspace   #FF5555 #FF5555 #F8F8F2
+		binding_mode       #FF5555 #FF5555 #F8F8F2
+	}
+	binding_mode_indicator yes
+	strip_workspace_numbers yes
+	strip_workspace_name yes
+
+	output HDMI-0
+	tray_output DVI-D-0
 }
