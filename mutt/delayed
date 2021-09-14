@@ -1,0 +1,11 @@
+set imap_user = "mroik"
+set smtp_url = "smtp://mroik@delayed.space:587"
+set from = "Mroik <mroik@delayed.space>"
+set folder = "imaps://delayed.space"
+set spoolfile = "+INBOX"
+set imap_pass=`kwallet-query -f Passwords -r delayed default`
+set smtp_pass=`kwallet-query -f Passwords -r delayed default`
+set record="=Sent"
+set copy=yes
+
+set header_cache=~/.cache/muttheaders/delayed
