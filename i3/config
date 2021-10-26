@@ -11,7 +11,8 @@ default_floating_border none
 exec --no-startup-id setxkbmap it
 exec --no-startup-id nvidia-settings --assign CurrentMetaMode="1920x1080_144 +0+0 { ForceFullCompositionPipeline = On }"
 exec --no-startup-id compton
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+#exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/stairs.jpeg
 exec --no-startup-id xset s off -dpms
 #bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/wallpaper.png
 bindsym $mod+l exec --no-startup-id loginctl lock-session
@@ -73,7 +74,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
