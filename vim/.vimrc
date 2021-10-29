@@ -54,3 +54,4 @@ endif
 " My_config
 set number
 set cc=121
+set tabstop=4
