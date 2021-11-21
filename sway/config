@@ -163,7 +163,7 @@ output HDMI-A-1 mode 1920x1080@60Hz
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -275,5 +275,8 @@ bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
+bindsym $mod+a exec --no-startup-id grim && notify-send -t 0 "Screenshot both monitors"
+bindsym $mod+x exec --no-startup-id grim -g "1920,0 1920x1080" && notify-send -t 0 "Screenshot main monitor"
+bindsym $mod+z exec --no-startup-id grim -g "0,0 1920x1080" && notify-send -t 0 "Screenshot 2nd monitor"
 
 include /etc/sway/config.d/*
