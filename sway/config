@@ -258,7 +258,7 @@ bar {
 # My confs that dont fit anywhere else
 default_border none
 default_floating_border none
-bindsym $mod+l exec --no-startup-id swaylock -i ~/Pictures/stairs.jpeg
+bindsym $mod+l exec --no-startup-id swaylock -i ~/Pictures/wallpaper.jpg
 bindsym $mod+k bar mode dock
 bindsym $mod+j bar mode hide
 exec --no-startup-id dunst
@@ -275,8 +275,8 @@ bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
-bindsym $mod+a exec --no-startup-id grim && notify-send -t 0 "Screenshot both monitors"
-bindsym $mod+x exec --no-startup-id grim -g "1920,0 1920x1080" && notify-send -t 0 "Screenshot main monitor"
-bindsym $mod+z exec --no-startup-id grim -g "0,0 1920x1080" && notify-send -t 0 "Screenshot 2nd monitor"
+bindsym $mod+a exec --no-startup-id grim - | swappy -f - && notify-send -t 0 "Screenshot both monitors"
+bindsym $mod+x exec --no-startup-id grim -g "1920,0 1920x1080" - | swappy -f - && notify-send -t 0 "Screenshot main monitor"
+bindsym $mod+z exec --no-startup-id grim -g "0,0 1920x1080" - | swappy -f - && notify-send -t 0 "Screenshot 2nd monitor"
 
 include /etc/sway/config.d/*
