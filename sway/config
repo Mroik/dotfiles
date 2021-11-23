@@ -23,7 +23,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/stairs.jpeg fill
+output DVI-D-1 bg ~/Pictures/stairs.jpeg fill
+output HDMI-A-1 bg ~/Pictures/painting.jpg fill
 output DVI-D-1 mode 1920x1080@144Hz
 output HDMI-A-1 mode 1920x1080@60Hz
 #
