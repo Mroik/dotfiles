@@ -55,3 +55,4 @@ endif
 set number
 set cc=121
 set tabstop=4
+set shiftwidth=4
