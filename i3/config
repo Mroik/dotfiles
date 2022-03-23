@@ -18,6 +18,8 @@ exec --no-startup-id xset s off -dpms
 bindsym $mod+l exec --no-startup-id dunstctl set-paused true && i3lock --nofork -i ~/Pictures/wallpaper.png -t && dunstctl set-paused false
 exec --no-startup-id dunst
 #exec --no-startup-id nm-applet
+bindsym $mod+q exec --no-startup-id streamlink --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -p "Streaml to open" "$@") best
+
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
 bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
