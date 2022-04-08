@@ -27,7 +27,6 @@ bindsym $mod+u exec --no-startup-id notify-send -t 0 --icon=~/.cache/nba_icon.pn
 bindsym $mod+y exec --no-startup-id notify-send -t 0 "Weather" "$(weather)"
 bindsym $mod+n exec --no-startup-id notify-send -t 0 --icon=~/.cache/unimi_icon.jpg "School schedule" "$(cd ~/Programs/unimi-calendar && source ./venv/bin/activate && python ./lessons.py)"
 bindsym $mod+b exec --no-startup-id random_xkcd
-bindsym $mod+c exec --no-startup-id notify-send -t 0 "Info ATM" "$(info_atm)"
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
