@@ -18,7 +18,7 @@ exec --no-startup-id xset s off -dpms
 bindsym $mod+l exec --no-startup-id dunstctl set-paused true && i3lock --nofork -i ~/Pictures/wallpaper.png -t && dunstctl set-paused false
 exec --no-startup-id dunst
 #exec --no-startup-id nm-applet
-bindsym $mod+q exec --no-startup-id streamlink --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
+bindsym $mod+q exec --no-startup-id streamlink --player-http --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
 bindsym $mod+c exec --no-startup-id kitty screen irssi --connect=twitch
 
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
