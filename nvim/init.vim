@@ -6,8 +6,8 @@ set shiftwidth=4
 set mouse=a
 
 " Remember position (nvim doesn't have it by default. Kinda dumb tbh)
-autocmd BufRead * autocmd FileType <buffer> ++once                                                                   
-      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
+autocmd BufRead * autocmd FileType <buffer> ++once 
+	\ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
 
 
 call plug#begin()
@@ -40,6 +40,9 @@ Plug 'mhinz/vim-signify'
 
 " fuzzy finder
 Plug 'junegunn/fzf.vim'
+
+" Project tree
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 
