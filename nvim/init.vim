@@ -57,7 +57,6 @@ local nvim_lsp = require'lspconfig'
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
 		hover_actions = {auto_focus = true},
         inlay_hints = {
             show_parameter_hints = false,
@@ -76,10 +75,6 @@ local opts = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
-                -- enable clippy on save
-                -- checkOnSave = {
-                --     command = "clippy"  -- left "check" as default since clippy gives too much info
-                -- },
             }
         }
     },
