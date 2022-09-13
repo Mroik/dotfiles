@@ -34,6 +34,12 @@ Plug 'simrat39/rust-tools.nvim'
 
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
+
+" Git symbols
+Plug 'mhinz/vim-signify'
+
+" fuzzy finder
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -134,3 +140,6 @@ cmp.setup({
 })
 EOF
 
+
+" Signify conf
+let g:signify_sign_show_count = 0
