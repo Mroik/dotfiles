@@ -4,6 +4,9 @@ set cc=121
 set tabstop=4
 set shiftwidth=4
 set mouse=a
+set laststatus=0
+
+nmap <F1> :NERDTree<enter>
 
 " Remember position (nvim doesn't have it by default. Kinda dumb tbh)
 autocmd BufRead * autocmd FileType <buffer> ++once 
@@ -63,6 +66,12 @@ set shortmess+=c
 lua <<EOF
 local nvim_lsp = require'lspconfig'
 
+local on_attach = function(client, bufnr)
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
+	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
+end
+
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
@@ -79,7 +88,7 @@ local opts = {
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
     server = {
         -- on_attach is a callback called when the language server attachs to the buffer
-        -- on_attach = on_attach,
+        on_attach = on_attach,
         settings = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
@@ -94,7 +103,14 @@ EOF
 
 
 lua <<EOF
+local on_attach = function(client, bufnr)
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
+	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
+end
+
 require'lspconfig'.pylsp.setup {
+	on_attach = on_attach,
 	settings = {
 		pylsp = {
 			plugins = {
