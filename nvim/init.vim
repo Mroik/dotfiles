@@ -9,6 +9,8 @@ set laststatus=0
 colorscheme mycmp
 
 nmap <F1> :NERDTree<enter>
+nmap <F11> :GFiles<enter>
+nmap <F12> :Files<enter>
 
 " Remember position (nvim doesn't have it by default. Kinda dumb tbh)
 autocmd BufRead * autocmd FileType <buffer> ++once 
