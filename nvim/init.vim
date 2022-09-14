@@ -6,6 +6,8 @@ set shiftwidth=4
 set mouse=a
 set laststatus=0
 
+colorscheme mycmp
+
 nmap <F1> :NERDTree<enter>
 
 " Remember position (nvim doesn't have it by default. Kinda dumb tbh)
@@ -70,6 +72,11 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
 	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+		vim.lsp.handlers.hover, {
+			border = "rounded"
+		}
+	)
 end
 
 local opts = {
@@ -107,6 +114,11 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
 	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+		vim.lsp.handlers.hover, {
+			border = "rounded"
+		}
+	)
 end
 
 require'lspconfig'.pylsp.setup {
@@ -155,6 +167,10 @@ cmp.setup({
     { name = 'vsnip' },
     { name = 'path' },
     { name = 'buffer' },
+  },
+  window = {
+	  completion = cmp.config.window.bordered(),
+	  documentation = cmp.config.window.bordered(),
   },
 })
 EOF
