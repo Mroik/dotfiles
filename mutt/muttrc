@@ -1,7 +1,7 @@
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 set copy=no
-set editor=/usr/bin/vim
+set editor=/usr/bin/nvim
 
 source "~/.config/mutt/colors"
 
