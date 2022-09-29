@@ -6,6 +6,7 @@
 #
 
 #My config
+for_window [class="^.*"] border none
 default_border none
 default_floating_border none
 exec --no-startup-id setxkbmap it
