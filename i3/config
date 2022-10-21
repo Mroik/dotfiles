@@ -26,7 +26,6 @@ bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
 bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
 bindsym $mod+y exec --no-startup-id notify-send -t 0 "Weather" "$(weather)"
-bindsym $mod+n exec --no-startup-id notify-send -t 0 --icon=~/.cache/unimi_icon.jpg "School schedule" "$(cd ~/Programs/unimi-calendar && source ./venv/bin/activate && python ./lessons.py)"
 bindsym $mod+b exec --no-startup-id random_xkcd
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
