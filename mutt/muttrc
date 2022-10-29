@@ -9,7 +9,7 @@ folder-hook "account.com.gmail.fainamirko" "source ~/.mutt/gmail"
 folder-hook "account.space.delayed.mroik" "source ~/.mutt/delayed"
 
 source ~/.config/mutt/gmail
-source ~/.config/mutt/gpg.rc
+#source ~/.config/mutt/gpg.rc
 
 macro index <f2> "<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>"
 macro index <f3> "<sync-mailbox><enter-command>source ~/.config/mutt/delayed<enter><change-folder>!<enter>"

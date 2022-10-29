@@ -1,11 +1,16 @@
+set imap_pass=`kwallet-query -f Passwords -r delayed default`
+set smtp_pass=`kwallet-query -f Passwords -r delayed default`
 set imap_user = "mroik"
 set smtp_url = "smtp://mroik@delayed.space:587"
 set from = "Mroik <mroik@delayed.space>"
 set folder = "imaps://delayed.space"
 set spoolfile = "+INBOX"
-set imap_pass=`kwallet-query -f Passwords -r delayed default`
-set smtp_pass=`kwallet-query -f Passwords -r delayed default`
 set record="=Sent"
 set copy=yes
+
+set pgp_self_encrypt = yes
+set pgp_default_key = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
+set smime_self_encrypt = yes
+set smime_default_key = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
 
 set header_cache=~/.cache/muttheaders/delayed
