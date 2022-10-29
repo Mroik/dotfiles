@@ -3,7 +3,6 @@ set imap_pass=`kwallet-query -f Passwords -r poul default`
 set folder      = imaps://poul.org/
 set imap_user   = mroik@poul.org
 set spoolfile   = +INBOX
-mailboxes       = +INBOX
 set from = "Mroik <mroik@poul.org>"
 
 set record="=Sent"
@@ -13,3 +12,5 @@ set smtp_url=smtps://mroik@poul.org@poul.org
 set ssl_force_tls = yes
 
 set header_cache=~/.cache/muttheaders/poul
+
+mailboxes $folder $record

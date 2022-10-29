@@ -14,3 +14,5 @@ set smime_self_encrypt = yes
 set smime_default_key = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
 
 set header_cache=~/.cache/muttheaders/delayed
+
+mailboxes $folder $record
