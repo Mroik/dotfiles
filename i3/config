@@ -27,6 +27,7 @@ bindsym $mod+i exec --no-startup-id dunstctl close-all
 bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
 bindsym $mod+y exec --no-startup-id notify-send -t 0 "Weather" "$(weather)"
 bindsym $mod+b exec --no-startup-id random_xkcd
+bindsym $mod+n exec --no-startup-id select_emoji
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
