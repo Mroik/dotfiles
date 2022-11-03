@@ -9,6 +9,7 @@ set laststatus=0
 colorscheme mycmp
 
 nmap <F1> :NERDTree<enter>
+nmap <F5> :lua vim.lsp.buf.references()<enter>
 nmap <F11> :GFiles<enter>
 nmap <F12> :Files<enter>
 
@@ -102,6 +103,9 @@ local opts = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
+				-- checkOnSave = {
+				-- 	command = "clippy"
+				-- }
             }
         }
     },
