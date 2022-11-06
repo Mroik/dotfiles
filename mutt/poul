@@ -12,5 +12,3 @@ set smtp_url=smtps://mroik@poul.org@poul.org
 set ssl_force_tls = yes
 
 set header_cache=~/.cache/muttheaders/poul
-
-mailboxes $folder $record

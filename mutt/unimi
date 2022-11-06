@@ -12,5 +12,3 @@ set smtp_url=smtps://mirko.faina@studenti.unimi.it@smtp.unimi.it
 set ssl_force_tls = yes
 
 set header_cache=~/.cache/muttheaders/unimi
-
-mailboxes $folder $record
