@@ -15,4 +15,5 @@ macro index <f2> "<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter
 macro index <f3> "<sync-mailbox><enter-command>source ~/.config/mutt/delayed<enter><change-folder>!<enter>"
 macro index <f4> "<sync-mailbox><enter-command>source ~/.config/mutt/unimi<enter><change-folder>!<enter>"
 macro index <f5> "<sync-mailbox><enter-command>source ~/.config/mutt/poul<enter><change-folder>!<enter>"
+macro index <f6> "<sync-mailbox><enter-command>source ~/.config/mutt/cockli<enter><change-folder>!<enter>"
 bind index x imap-fetch-mail

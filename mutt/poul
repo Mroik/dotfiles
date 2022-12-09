@@ -3,7 +3,7 @@ set imap_pass=`kwallet-query -f Passwords -r poul default`
 set folder      = imaps://poul.org/
 set imap_user   = mroik@poul.org
 set spoolfile   = +INBOX
-set from = "Mroik <mroik@poul.org>"
+set from = "mroik <mroik@poul.org>"
 
 set record="=Sent"
 set copy=yes
