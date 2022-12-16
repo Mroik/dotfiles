@@ -10,6 +10,7 @@ colorscheme mycmp
 
 nmap <F1> :NERDTree<enter>
 nmap <F5> :lua vim.lsp.buf.references()<enter>
+nmap <F10> :UndotreeToggle<CR>
 nmap <F11> :GFiles<enter>
 nmap <F12> :Files<enter>
 
@@ -51,6 +52,9 @@ Plug 'junegunn/fzf.vim'
 
 " Project tree
 Plug 'scrooloose/nerdtree'
+
+" Undotree to navigate file history (pretty much versioning)
+Plug 'mbbill/undotree'
 call plug#end()
 
 
