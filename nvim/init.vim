@@ -9,6 +9,8 @@ set laststatus=0
 colorscheme mycmp
 
 nmap <F1> :NERDTree<enter>
+nmap <F3> :lua vim.lsp.buf.hover()<enter>
+nmap <F4> :lua vim.lsp.buf.definition()<enter>
 nmap <F5> :lua vim.lsp.buf.references()<enter>
 nmap <F10> :UndotreeToggle<CR>
 nmap <F11> :GFiles<enter>
@@ -77,8 +79,6 @@ local nvim_lsp = require'lspconfig'
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
-	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 		vim.lsp.handlers.hover, {
 			border = "rounded"
@@ -116,20 +116,6 @@ local opts = {
 }
 
 require('rust-tools').setup(opts)
-EOF
-
-
-lua <<EOF
-local on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-	vim.keymap.set('n', '<F4>', vim.lsp.buf.definition, { noremap=true, silent=true, buffer=bufnr })
-	vim.keymap.set('n', '<F3>', vim.lsp.buf.hover, { noremap=true, silent=true, buffer=bufnr })
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-		vim.lsp.handlers.hover, {
-			border = "rounded"
-		}
-	)
-end
 
 require'lspconfig'.pylsp.setup {
 	on_attach = on_attach,
@@ -143,6 +129,10 @@ require'lspconfig'.pylsp.setup {
 			}
 		}
 	}
+}
+
+require'lspconfig'.clangd.setup{
+	on_attach = on_attach,
 }
 EOF
 
