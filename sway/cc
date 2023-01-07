@@ -6,11 +6,11 @@
 
 set $mod Mod4
 
-#for_window [class="^.*"] border none
 default_border none
 default_floating_border none
 bindsym $mod+l exec --no-startup-id dunstctl set-paused true && swayidle -w && dunstctl set-paused false
 exec --no-startup-id dunst
+exec --no-startup-id kwalletd5
 bindsym $mod+q exec --no-startup-id streamlink --player-http --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
 bindsym $mod+c exec --no-startup-id kitty screen irssi --connect=twitch
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
@@ -24,9 +24,11 @@ bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
 bindsym $mod+k bar mode dock
 bindsym $mod+j bar mode hide
-exec --no-startup-id sh ~/Programs/dual_monitor.sh
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+Right move workspace to output right
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
+
 
 ### Variables
 #
@@ -211,6 +213,8 @@ bar {
     status_command i3blocks -c /home/mroik/.config/i3blocks/config
 	mode hide
 	modifier none
+	font Monospace normal 9
+	height 15
     colors {
         statusline #ffffff
         background #323232
