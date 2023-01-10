@@ -8,7 +8,7 @@ set $mod Mod4
 
 default_border none
 default_floating_border none
-bindsym $mod+l exec --no-startup-id dunstctl set-paused true && swayidle -w && dunstctl set-paused false
+bindsym $mod+l exec --no-startup-id dunstctl set-paused true && swaylock -i /home/mroik/Pictures/lock.jpg -i HDMI-A-1:/home/mroik/Pictures/lock2.jpg && dunstctl set-paused false
 exec --no-startup-id dunst
 exec --no-startup-id kwalletd5
 bindsym $mod+q exec --no-startup-id streamlink --player-http --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
@@ -43,7 +43,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/mroik/Pictures/wallpaper.jpg fill
+output DVI-D-1 bg /home/mroik/Pictures/wallpaper.jpg fill
+output HDMI-A-1 bg /home/mroik/Pictures/wallpaper2.jpg fill
 #
 # Example configuration:
 #
