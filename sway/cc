@@ -210,17 +210,8 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-    status_command i3blocks -c /home/mroik/.config/i3blocks/config
-	mode hide
+	swaybar_command waybar
 	modifier none
-	font Monospace normal 9
-	height 15
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #323232ff #323232ff #5c5c5c
-    }
 }
 
 include /etc/sway/config.d/*

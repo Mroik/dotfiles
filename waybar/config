@@ -1,0 +1,15 @@
+{
+	"layer": "top",
+	"height": 8,
+	"ipc": true,
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-right": ["network", "clock", "tray"],
+	"network": {
+		"interface": "enp6s0",
+		"format": "{ipaddr}",
+		"tooltip-format": "{ifname}",
+	},
+	"clock": {
+		"format-alt": "{%H:%M}"
+	}
+}
