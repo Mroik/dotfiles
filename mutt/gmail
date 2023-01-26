@@ -1,5 +1,5 @@
-set smtp_pass=`kwallet-query -f Passwords -r gmail default`
-set imap_pass=`kwallet-query -f Passwords -r gmail default`
+set smtp_pass=`kwallet-query -f Passwords -r gmail default 2>/dev/null`
+set imap_pass=`kwallet-query -f Passwords -r gmail default 2>/dev/null`
 set folder      = imaps://imap.gmail.com/
 set imap_user   = fainamirko@gmail.com
 set spoolfile   = +INBOX

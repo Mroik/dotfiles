@@ -1,5 +1,5 @@
-set smtp_pass=`kwallet-query -f Passwords -r unimi default`
-set imap_pass=`kwallet-query -f Passwords -r unimi default`
+set smtp_pass=`kwallet-query -f Passwords -r unimi default 2>/dev/null`
+set imap_pass=`kwallet-query -f Passwords -r unimi default 2>/dev/null`
 set folder      = imaps://mailserver.unimi.it/
 set imap_user   = mirko.faina@studenti.unimi.it
 set spoolfile   = +INBOX

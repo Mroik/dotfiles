@@ -1,5 +1,5 @@
-set imap_pass=`kwallet-query -f Passwords -r delayed default`
-set smtp_pass=`kwallet-query -f Passwords -r delayed default`
+set imap_pass=`kwallet-query -f Passwords -r delayed default 2>/dev/null`
+set smtp_pass=`kwallet-query -f Passwords -r delayed default 2>/dev/null`
 set imap_user = "mroik"
 set smtp_url = "smtp://mroik@delayed.space:587"
 set from = "mroik <mroik@delayed.space>"
