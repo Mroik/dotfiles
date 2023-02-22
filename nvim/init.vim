@@ -134,6 +134,10 @@ require'lspconfig'.pylsp.setup {
 require'lspconfig'.clangd.setup{
 	on_attach = on_attach,
 }
+
+require'lspconfig'.ocamllsp.setup{
+	on_attach = on_attach,
+}
 EOF
 
 
