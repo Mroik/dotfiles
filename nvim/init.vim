@@ -4,6 +4,7 @@ set cc=121
 set tabstop=4
 set shiftwidth=4
 set mouse=a
+set mousemodel=extend
 set laststatus=0
 
 colorscheme mycmp
