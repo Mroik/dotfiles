@@ -10,6 +10,7 @@ set laststatus=0
 colorscheme mycmp
 
 nmap <F1> :NERDTree<enter>
+nmap <F2> :lua vim.lsp.buf.code_action()<enter>
 nmap <F3> :lua vim.lsp.buf.hover()<enter>
 nmap <F4> :lua vim.lsp.buf.definition()<enter>
 nmap <F5> :lua vim.lsp.buf.references()<enter>
