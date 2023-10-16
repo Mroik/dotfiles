@@ -11,4 +11,10 @@ set copy=yes
 set smtp_url=smtps://mroik@poul.org@poul.org
 set ssl_force_tls = yes
 
+set pgp_self_encrypt = yes
+set pgp_default_key = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
+set smime_self_encrypt = yes
+set smime_default_key = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
+set crypt_protected_headers_write = yes
+
 set header_cache=~/.cache/muttheaders/poul
