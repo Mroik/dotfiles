@@ -61,6 +61,10 @@ Plug 'scrooloose/nerdtree'
 
 " Undotree to navigate file history (pretty much versioning)
 Plug 'mbbill/undotree'
+
+" Coq autocomplete and stuff
+Plug 'whonore/Coqtail' " for ftdetect, syntax, basic ftplugin, etc
+Plug 'tomtomjhj/coq-lsp.nvim'
 call plug#end()
 
 
@@ -142,6 +146,22 @@ require'lspconfig'.clangd.setup{
 
 require'lspconfig'.ocamllsp.setup{
 	on_attach = on_attach,
+}
+
+-- Coq related stuff
+require'coq-lsp'.setup {
+  coq_lsp_nvim = {
+    -- to be added
+  },
+  lsp = {
+    on_attach = on_attach,
+    -- coq-lsp server initialization configurations, defined here:
+    -- https://github.com/ejgallego/coq-lsp/blob/main/editor/code/src/config.ts#L3
+    -- Documentations are at https://github.com/ejgallego/coq-lsp/blob/main/editor/code/package.json.
+    init_options = {
+      show_notices_as_diagnostics = true,
+    },
+  },
 }
 EOF
 
