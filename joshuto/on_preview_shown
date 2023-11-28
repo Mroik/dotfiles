@@ -20,15 +20,9 @@ function image {
 		"$1" 2>/dev/null
 }
 
-function image_v {
-	ffmpegthumbnailer -i "$1" -o "${TMP_FILE}" -s 0
-	kitty +kitten icat \
-		--transfer-mode=file \
-		--clear 2>/dev/null
-	kitty +kitten icat \
-		--transfer-mode=file \
-		--place "${PREVIEW_WIDTH}x${PREVIEW_HEIGHT}@${PREVIEW_X_COORD}x${PREVIEW_Y_COORD}" \
-		"${TMP_FILE}" 2>/dev/null
+function video {
+	ffmpegthumbnailer -i "$1" -o "${TMP_FILE}" -s 0 2>/dev/null
+	image "${TMP_FILE}"
 }
 
 case "$mimetype" in
@@ -36,7 +30,7 @@ case "$mimetype" in
 		image "${FILE_PATH}"
 		;;
 	video/*)
-		image_v "${FILE_PATH}"
+		video "${FILE_PATH}"
 		;;
 	*)
 		kitty +kitten icat \
