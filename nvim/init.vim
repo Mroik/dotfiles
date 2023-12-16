@@ -14,6 +14,7 @@ nmap <F2> :lua vim.lsp.buf.code_action()<enter>
 nmap <F3> :lua vim.lsp.buf.hover()<enter>
 nmap <F4> :lua vim.lsp.buf.definition()<enter>
 nmap <F5> :lua vim.lsp.buf.references()<enter>
+nmap <F6> :lua vim.lsp.buf.rename()<enter>
 nmap <F8> :Commits<enter>
 nmap <F9> :Rg<enter>
 nmap <F10> :UndotreeToggle<CR>
@@ -132,7 +133,6 @@ require'lspconfig'.pylsp.setup {
 		pylsp = {
 			plugins = {
 				pycodestyle = {
-					ignore = {'W391'},
 					maxLineLength = 120
 				}
 			}
