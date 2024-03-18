@@ -10,7 +10,7 @@ default_border none
 default_floating_border none
 bindsym $mod+l exec --no-startup-id dunstctl set-paused true && swaylock -i /home/mroik/Pictures/lock.jpg -i HDMI-A-1:/home/mroik/Pictures/lock2.jpg && dunstctl set-paused false
 exec --no-startup-id dunst
-exec --no-startup-id kwalletd5
+exec --no-startup-id kwalletd6
 exec_always --no-startup-id nm-applet --indicator
 bindsym $mod+q exec --no-startup-id streamlink --twitch-low-latency --player=mpv --player-http twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
 bindsym $mod+c exec --no-startup-id kitty screen irssi --connect=twitch
