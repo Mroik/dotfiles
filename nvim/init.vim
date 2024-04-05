@@ -148,6 +148,10 @@ require'lspconfig'.ocamllsp.setup{
 	on_attach = on_attach,
 }
 
+require'lspconfig'.tsserver.setup{
+	on_attach = on_attach,
+}
+
 -- Coq related stuff
 require'coq-lsp'.setup {
   coq_lsp_nvim = {
