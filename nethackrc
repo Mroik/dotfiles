@@ -1,0 +1,10 @@
+OPTIONS=autopickup:false
+BIND=v:pickup
+OPTIONS=fruit:melinda
+OPTIONS=hilite_pet:true
+OPTIONS=hilite_pile:true
+OPTIONS=hitpointbar:true
+OPTIONS=lit_corridor:true
+OPTIONS=menucolors:true
+OPTIONS=pickup_burden:U
+OPTIONS=whatis_coord:c
