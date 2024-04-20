@@ -16,7 +16,7 @@ bindsym $mod+q exec --no-startup-id streamlink --twitch-low-latency --player=mpv
 bindsym $mod+c exec --no-startup-id kitty screen irssi --connect=twitch
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
-bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=~/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
+bindsym $mod+o exec --no-startup-id notify-send -t 0 --icon=/home/mroik/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
 bindsym $mod+y exec --no-startup-id notify-send -t 0 "Weather" "$(weather)"
 bindsym $mod+b exec --no-startup-id random_xkcd
 bindsym $mod+n exec --no-startup-id select_emoji
