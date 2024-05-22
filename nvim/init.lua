@@ -6,7 +6,7 @@ vim.opt.mouse = "a"
 vim.opt.mousemodel = "extend"
 vim.opt.laststatus = 0
 
-vim.cmd.colorscheme("mycmp")
+vim.cmd.colorscheme("dracula")
 
 vim.keymap.set("n", "<F1>", "<cmd>NERDTree<enter>")
 vim.keymap.set("n", "<F2>", vim.lsp.buf.code_action)
