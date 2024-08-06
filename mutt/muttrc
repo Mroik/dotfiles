@@ -9,6 +9,7 @@ folder-hook "account.com.gmail.fainamirko" "source ~/.mutt/gmail"
 folder-hook "account.space.delayed.mroik" "source ~/.mutt/delayed"
 
 source ~/.config/mutt/gmail
+#source ~/.config/mutt/delayed
 #source ~/.config/mutt/gpg.rc
 
 macro index <f2> "<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>"
@@ -16,4 +17,5 @@ macro index <f3> "<sync-mailbox><enter-command>source ~/.config/mutt/delayed<ent
 macro index <f4> "<sync-mailbox><enter-command>source ~/.config/mutt/unimi<enter><change-folder>!<enter>"
 macro index <f5> "<sync-mailbox><enter-command>source ~/.config/mutt/poul<enter><change-folder>!<enter>"
 macro index <f6> "<sync-mailbox><enter-command>source ~/.config/mutt/cockli<enter><change-folder>!<enter>"
+macro index <f7> "<sync-mailbox><enter-command>source ~/.config/mutt/blackhole<enter><change-folder>!<enter>"
 bind index x imap-fetch-mail

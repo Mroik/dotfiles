@@ -1,0 +1,17 @@
+set imap_pass=`kwallet-query -f Passwords -r blackhole default 2>/dev/null`
+set smtp_pass=`kwallet-query -f Passwords -r blackhole default 2>/dev/null`
+
+set folder      = imaps://mail.delayed.space/
+set imap_user   = blackhole@delayed.space
+set spoolfile   = +INBOX
+set from = blackhole@delayed.space
+set smtp_url=smtps://blackhole@delayed.space@mail.delayed.space
+
+set record="=Sent"
+set copy=yes
+
+set pgp_self_encrypt = no
+set smime_self_encrypt = no
+set crypt_protected_headers_write = no
+
+set header_cache=~/.cache/muttheaders/blackhole
