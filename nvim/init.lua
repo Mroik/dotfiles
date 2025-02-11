@@ -15,7 +15,6 @@ vim.keymap.set("n", "<F5>", vim.lsp.buf.references)
 vim.keymap.set("n", "<F6>", vim.lsp.buf.rename)
 vim.keymap.set("n", "<F8>", "<cmd>Commits<enter>")
 vim.keymap.set("n", "<F9>", "<cmd>Rg<enter>")
-vim.keymap.set("n", "<F10>", "<cmd>UndotreeToggle<enter>")
 vim.keymap.set("n", "<F11>", "<cmd>GFiles<enter>")
 vim.keymap.set("n", "<F12>", "<cmd>Files<enter>")
 
@@ -53,9 +52,6 @@ Plug('mhinz/vim-signify')
 -- fuzzy finder
 Plug('junegunn/fzf.vim')
 
--- Undotree to navigate file history (pretty much versioning)
-Plug('mbbill/undotree')
-
 -- Coq autocomplete and stuff
 Plug('whonore/Coqtail') -- for ftdetect, syntax, basic ftplugin, etc
 Plug('tomtomjhj/coq-lsp.nvim')
@@ -79,7 +75,6 @@ vim.opt.shortmess:append('c')
 local nvim_lsp = require'lspconfig'
 
 local on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 		vim.lsp.handlers.hover, {
 			border = "rounded"
