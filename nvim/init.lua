@@ -8,6 +8,7 @@ vim.opt.laststatus = 0
 
 vim.cmd.colorscheme("dracula")
 
+vim.keymap.set("n", "<F1>", vim.lsp.buf.format)
 vim.keymap.set("n", "<F2>", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<F3>", vim.lsp.buf.hover)
 vim.keymap.set("n", "<F4>", vim.lsp.buf.definition)
