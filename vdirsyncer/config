@@ -5,7 +5,6 @@ status_path = "~/.cache/vdirsyncer/status"
 a = "unimi_local"
 b = "unimi_remote"
 collections = ["from a", "from b"]
-
 metadata = ["displayname", "color"]
 
 [storage unimi_local]
@@ -20,3 +19,18 @@ token_file = "~/.cache/vdirsyncer/google_token"
 #client_secret = "REDACTED"
 start_date = "datetime.now() - timedelta(days=365)"
 end_date = "datetime.now() + timedelta(days=365)"
+
+[pair poul_calendar]
+a = "poul_local"
+b = "poul_remote"
+collections = null
+metadata = ["displayname", "color"]
+
+[storage poul_local]
+type = "filesystem"
+path = "~/.local/share/khal/calendars/poul/"
+fileext = ".ics"
+
+[storage poul_remote]
+type = "http"
+url = "https://calendar.google.com/calendar/ical/a76bdd3992a74ffbe25dc04bd0fe362cf50e569deff599581633db8c2aa99a91%40group.calendar.google.com/public/basic.ics"
