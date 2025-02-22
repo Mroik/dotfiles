@@ -13,11 +13,11 @@ path = /home/mroik/.local/share/khal/calendars/94e63316353f5614b2f344c4e617a7d5b
 type = calendar
 
 [[poul]]
-path = /home/mroik/.local/share/khal/calendars/poul
+path = /home/mroik/.local/share/khal/calendars/a76bdd3992a74ffbe25dc04bd0fe362cf50e569deff599581633db8c2aa99a91@group.calendar.google.com
 type = calendar
 
 [[polimovies]]
-path = /home/mroik/.local/share/khal/calendars/polimovies
+path = /home/mroik/.local/share/khal/calendars/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
 type = calendar
 
 [locale]
