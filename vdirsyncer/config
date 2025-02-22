@@ -34,3 +34,18 @@ fileext = ".ics"
 [storage poul_remote]
 type = "http"
 url = "https://calendar.google.com/calendar/ical/a76bdd3992a74ffbe25dc04bd0fe362cf50e569deff599581633db8c2aa99a91%40group.calendar.google.com/public/basic.ics"
+
+[pair polimovies]
+a = "polimovies_local"
+b = "polimovies_remote"
+collections = null
+metadata = ["displayname", "color"]
+
+[storage polimovies_local]
+type = "filesystem"
+path = "~/.local/share/khal/calendars/polimovies/"
+fileext = ".ics"
+
+[storage polimovies_remote]
+type = "http"
+url = "https://calendar.google.com/calendar/ical/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4%40group.calendar.google.com/public/basic.ics"

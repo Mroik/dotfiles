@@ -16,6 +16,10 @@ type = calendar
 path = /home/mroik/.local/share/khal/calendars/poul
 type = calendar
 
+[[polimovies]]
+path = /home/mroik/.local/share/khal/calendars/polimovies
+type = calendar
+
 [locale]
 timeformat = %I:%M %p
 dateformat = %Y-%m-%d
