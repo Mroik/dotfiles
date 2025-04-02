@@ -10,7 +10,7 @@ vim.cmd.colorscheme("dracula")
 
 vim.keymap.set("n", "<F1>", vim.lsp.buf.format)
 vim.keymap.set("n", "<F2>", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<F3>", vim.lsp.buf.hover)
+vim.keymap.set("n", "<F3>", function() vim.lsp.buf.hover({border = "rounded"}) end)
 vim.keymap.set("n", "<F4>", vim.lsp.buf.definition)
 vim.keymap.set("n", "<F5>", vim.lsp.buf.references)
 vim.keymap.set("n", "<F6>", vim.lsp.buf.rename)
@@ -75,14 +75,6 @@ vim.opt.shortmess:append('c')
 -- See https://github.com/simrat39/rust-tools.nvim#configuration
 local nvim_lsp = require'lspconfig'
 
-local on_attach = function(client, bufnr)
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-		vim.lsp.handlers.hover, {
-			border = "rounded"
-		}
-	)
-end
-
 local opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
@@ -99,8 +91,6 @@ local opts = {
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
     server = {
-        -- on_attach is a callback called when the language server attachs to the buffer
-        on_attach = on_attach,
         settings = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
@@ -116,7 +106,6 @@ local opts = {
 require('rust-tools').setup(opts)
 
 require'lspconfig'.pylsp.setup {
-	on_attach = on_attach,
 	settings = {
 		pylsp = {
 			plugins = {
@@ -129,15 +118,12 @@ require'lspconfig'.pylsp.setup {
 }
 
 require'lspconfig'.clangd.setup{
-	on_attach = on_attach,
 }
 
 require'lspconfig'.ocamllsp.setup{
-	on_attach = on_attach,
 }
 
 require'lspconfig'.ts_ls.setup{
-	on_attach = on_attach,
 }
 
 -- Coq related stuff
@@ -146,7 +132,6 @@ require'coq-lsp'.setup {
     -- to be added
   },
   lsp = {
-    on_attach = on_attach,
     -- coq-lsp server initialization configurations, defined here:
     -- https://github.com/ejgallego/coq-lsp/blob/main/editor/code/src/config.ts#L3
     -- Documentations are at https://github.com/ejgallego/coq-lsp/blob/main/editor/code/package.json.
@@ -157,7 +142,6 @@ require'coq-lsp'.setup {
 }
 
 require'lspconfig'.lua_ls.setup {
-  on_attach = on_attach,
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
