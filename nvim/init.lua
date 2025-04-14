@@ -41,8 +41,8 @@ Plug('hrsh7th/cmp-buffer')
 
 -- See hrsh7th's other plugins for more completion sources!
 
--- To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug('simrat39/rust-tools.nvim')
+-- DO NOT run nvim-lspconfig
+Plug('mrcjkb/rustaceanvim')
 
 -- Snippet engine
 Plug('hrsh7th/vim-vsnip')
@@ -69,42 +69,6 @@ vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 -- Avoid showing extra messages when using completion
 vim.opt.shortmess:append('c')
 
-
--- Configure LSP through rust-tools.nvim plugin.
--- rust-tools will configure and enable certain LSP features for us.
--- See https://github.com/simrat39/rust-tools.nvim#configuration
-local nvim_lsp = require'lspconfig'
-
-local opts = {
-    tools = { -- rust-tools options
-        autoSetHints = true,
-		hover_actions = {auto_focus = true},
-        inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-			highlight = "DiagnosticOk",
-        },
-    },
-
-    -- all the opts to send to nvim-lspconfig
-    -- these override the defaults set by rust-tools.nvim
-    -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-    server = {
-        settings = {
-            -- to enable rust-analyzer settings visit:
-            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-            ["rust-analyzer"] = {
-				-- checkOnSave = {
-				-- 	command = "clippy"
-				-- }
-            }
-        }
-    },
-}
-
-require('rust-tools').setup(opts)
-
 require'lspconfig'.pylsp.setup {
 	settings = {
 		pylsp = {
@@ -115,6 +79,13 @@ require'lspconfig'.pylsp.setup {
 			}
 		}
 	}
+}
+
+-- Config lsp for Rust
+vim.g.rustaceanvim = {
+	tools = {
+		enable_clippy = false,
+	},
 }
 
 require'lspconfig'.clangd.setup{
