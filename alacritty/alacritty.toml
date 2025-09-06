@@ -7,7 +7,7 @@ animation = "EaseOutExpo"
 duration = 5
 
 [font]
-normal = {family = "Cozette"}
+normal = { family = "Cozette" }
 
 [mouse]
 hide_when_typing = true
