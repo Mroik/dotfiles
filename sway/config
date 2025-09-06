@@ -13,14 +13,14 @@ exec --no-startup-id dunst
 exec --no-startup-id kwalletd6
 exec_always --no-startup-id nm-applet --indicator
 bindsym $mod+q exec --no-startup-id streamlink --player=mpv twitch.tv/$(cat ~/.cache/twitch_live | dmenu -i -p "Stream to open" "$@") best
-bindsym $mod+c exec --no-startup-id alacritty screen irssi --connect=twitch
+bindsym $mod+c exec --no-startup-id alacritty -e screen irssi --connect=twitch
 bindsym $mod+p exec --no-startup-id dunstctl history-pop
 bindsym $mod+i exec --no-startup-id dunstctl close-all
 bindsym $mod+o exec --no-startup-id notify-send --icon=/home/mroik/.cache/twitch_icon.png "Twitch live" "$(cat ~/.cache/twitch_live)"
 bindsym $mod+y exec --no-startup-id notify-send "Weather" "$(weather)"
 bindsym $mod+b exec --no-startup-id random_xkcd
 bindsym $mod+n exec --no-startup-id select_emoji
-bindsym $mod+x exec --no-startup-id alacritty wiki-tui
+bindsym $mod+x exec --no-startup-id alacritty -e wiki-tui
 #show/hide status bar
 bindsym $mod+backslash bar hidden_state show
 bindsym --release $mod+backslash bar hidden_state hide
