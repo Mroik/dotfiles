@@ -1,6 +1,6 @@
 set smtp_pass=`kwallet-query -f Passwords -r poul default 2>/dev/null`
 set imap_pass=`kwallet-query -f Passwords -r poul default 2>/dev/null`
-set folder      = imaps://imap.poul.org/
+set folder      = imaps://mail.poul.org/
 set imap_user   = mroik@poul.org
 set spoolfile   = +INBOX
 set from = "mroik <mroik@poul.org>"
@@ -8,7 +8,7 @@ set from = "mroik <mroik@poul.org>"
 set record="=Sent"
 set copy=yes
 
-set smtp_url=smtps://mroik@poul.org@smtp.poul.org
+set smtp_url=smtps://mroik@poul.org@mail.poul.org
 set ssl_force_tls = yes
 
 set pgp_self_encrypt = yes

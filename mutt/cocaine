@@ -1,0 +1,14 @@
+set smtp_pass=`kwallet-query -f Passwords -r cocaine default 2>/dev/null`
+set imap_pass=`kwallet-query -f Passwords -r cocaine default 2>/dev/null`
+set folder      = imaps://mail.cock.li/
+set imap_user   = positivec@cocaine.ninja
+set spoolfile   = +INBOX
+set from = "PositiveC <positivec@cocaine.ninja>"
+
+set record="=Sent"
+set copy=yes
+
+set smtp_url=smtps://positivec@cocaine.ninja@mail.cock.li
+set ssl_force_tls = yes
+
+set header_cache=~/.cache/muttheaders/cocaine.ninja
