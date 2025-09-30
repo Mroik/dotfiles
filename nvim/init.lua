@@ -69,7 +69,7 @@ vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 -- Avoid showing extra messages when using completion
 vim.opt.shortmess:append('c')
 
-require'lspconfig'.pylsp.setup {
+vim.lsp.config.pylsp = {
 	settings = {
 		pylsp = {
 			plugins = {
@@ -88,14 +88,9 @@ vim.g.rustaceanvim = {
 	},
 }
 
-require'lspconfig'.clangd.setup{
-}
-
-require'lspconfig'.ocamllsp.setup{
-}
-
-require'lspconfig'.ts_ls.setup{
-}
+vim.lsp.enable('clangd')
+vim.lsp.enable('ocamllsp ')
+vim.lsp.enable('ts_ls')
 
 -- Coq related stuff
 require'coq-lsp'.setup {
@@ -112,7 +107,7 @@ require'coq-lsp'.setup {
   },
 }
 
-require'lspconfig'.lua_ls.setup {
+vim.lsp.config.lua_ls = {
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
