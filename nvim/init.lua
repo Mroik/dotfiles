@@ -14,6 +14,7 @@ vim.keymap.set("n", "<F3>", function() vim.lsp.buf.hover({border = "rounded"}) e
 vim.keymap.set("n", "<F4>", vim.lsp.buf.definition)
 vim.keymap.set("n", "<F5>", vim.lsp.buf.references)
 vim.keymap.set("n", "<F6>", vim.lsp.buf.rename)
+vim.keymap.set("n", "<F7>", function() vim.diagnostic.open_float({border = "rounded"}) end)
 vim.keymap.set("n", "<F8>", "<cmd>Commits<enter>")
 vim.keymap.set("n", "<F9>", "<cmd>Rg<enter>")
 vim.keymap.set("n", "<F11>", "<cmd>GFiles<enter>")
