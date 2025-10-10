@@ -70,6 +70,13 @@ vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 -- Avoid showing extra messages when using completion
 vim.opt.shortmess:append('c')
 
+-- Config lsp for Rust
+vim.g.rustaceanvim = {
+	tools = {
+		enable_clippy = false,
+	},
+}
+
 vim.lsp.config.pylsp = {
 	settings = {
 		pylsp = {
@@ -82,13 +89,15 @@ vim.lsp.config.pylsp = {
 	}
 }
 
--- Config lsp for Rust
-vim.g.rustaceanvim = {
-	tools = {
-		enable_clippy = false,
+
+vim.lsp.config.clangd = {
+	cmd = {
+		"clangd",
+		"--fallback-style=webkit"
 	},
 }
 
+vim.lsp.enable('pylsp')
 vim.lsp.enable('clangd')
 vim.lsp.enable('ocamllsp ')
 vim.lsp.enable('ts_ls')
