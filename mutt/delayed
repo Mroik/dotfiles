@@ -4,7 +4,7 @@ set smtp_pass=`kwallet-query -f Passwords -r delayed default 2>/dev/null`
 set folder      = imaps://mail.delayed.space/
 set imap_user   = mroik@delayed.space
 set spoolfile   = +INBOX
-set from = "mroik <mroik@delayed.space>"
+set from = "Mroik <mroik@delayed.space>"
 set smtp_url=smtps://mroik@delayed.space@mail.delayed.space
 
 set record="=Sent"
