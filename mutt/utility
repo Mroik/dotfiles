@@ -1,0 +1,4 @@
+unset imap_authenticators
+unset imap_oauth_refresh_command
+unset smtp_authenticators
+unset smtp_oauth_refresh_command

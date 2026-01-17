@@ -5,8 +5,7 @@ set editor=/usr/bin/nvim
 
 source "~/.config/mutt/colors"
 
-folder-hook "account.com.gmail.fainamirko" "source ~/.mutt/gmail"
-folder-hook "account.space.delayed.mroik" "source ~/.mutt/delayed"
+folder-hook !outlook\\.office365\\.com/ "source ~/.config/mutt/utility"
 
 source ~/.config/mutt/gmail
 #source ~/.config/mutt/delayed
