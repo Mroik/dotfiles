@@ -4,6 +4,10 @@
 path = /home/mroik/.local/share/khal/calendars/google/fainamirko@gmail.com
 type = calendar
 
+[[festivi]]
+path = /home/mroik/.local/share/khal/calendars/google/d5q2sqbkc5m6iobe4dk6ur39chgnig37e9nnas1eeon66obccln68obi5pjmurr7dhiisorfdk@virtual
+type = calendar
+
 [[unimi]]
 path = /home/mroik/.local/share/khal/calendars/google/d39e820035ae37ee24cc39b45c2365fab50c5e15ec4a8d0ec65d608cced57ab5@group.calendar.google.com
 type = calendar
