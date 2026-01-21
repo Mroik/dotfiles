@@ -6,10 +6,11 @@ a = "google_local"
 b = "google_remote"
 collections = ["from a", "from b"]
 metadata = ["displayname", "color"]
+conflict_resolution = "b wins"
 
 [storage google_local]
 type = "filesystem"
-path = "~/.local/share/khal/calendars/"
+path = "~/.local/share/khal/calendars/google"
 fileext = ".ics"
 
 [storage google_remote]

@@ -1,23 +1,23 @@
 [calendars]
 
 [[private]]
-path = /home/mroik/.local/share/khal/calendars/fainamirko@gmail.com
+path = /home/mroik/.local/share/khal/calendars/google/fainamirko@gmail.com
 type = calendar
 
 [[unimi]]
-path = /home/mroik/.local/share/khal/calendars/faf320019a6f73e98584978b2eac00e745e17d18077ddcd307c6f7dc43023d2b@group.calendar.google.com
+path = /home/mroik/.local/share/khal/calendars/google/d39e820035ae37ee24cc39b45c2365fab50c5e15ec4a8d0ec65d608cced57ab5@group.calendar.google.com
 type = calendar
 
 [[PSG]]
-path = /home/mroik/.local/share/khal/calendars/94e63316353f5614b2f344c4e617a7d5bad1120b9830656fb6c548f320f707af@group.calendar.google.com
+path = /home/mroik/.local/share/khal/calendars/google/94e63316353f5614b2f344c4e617a7d5bad1120b9830656fb6c548f320f707af@group.calendar.google.com
 type = calendar
 
 [[poul]]
-path = /home/mroik/.local/share/khal/calendars/a76bdd3992a74ffbe25dc04bd0fe362cf50e569deff599581633db8c2aa99a91@group.calendar.google.com
+path = /home/mroik/.local/share/khal/calendars/google/vmqiqjttapof8d7l87l569m5bjf86lho@import.calendar.google.com
 type = calendar
 
 [[polimovies]]
-path = /home/mroik/.local/share/khal/calendars/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
+path = /home/mroik/.local/share/khal/calendars/google/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
 type = calendar
 
 [locale]
