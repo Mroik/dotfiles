@@ -8,13 +8,22 @@ vim.opt.laststatus = 0
 
 vim.cmd.colorscheme("dracula")
 
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or "rounded"
+
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 vim.keymap.set("n", "<F1>", vim.lsp.buf.format)
 vim.keymap.set("n", "<F2>", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<F3>", function() vim.lsp.buf.hover({border = "rounded"}) end)
+vim.keymap.set("n", "<F3>", vim.lsp.buf.hover)
 vim.keymap.set("n", "<F4>", vim.lsp.buf.definition)
 vim.keymap.set("n", "<F5>", vim.lsp.buf.references)
 vim.keymap.set("n", "<F6>", vim.lsp.buf.rename)
-vim.keymap.set("n", "<F7>", function() vim.diagnostic.open_float({border = "rounded"}) end)
+vim.keymap.set("n", "<F7>", vim.diagnostic.open_float)
 vim.keymap.set("n", "<F8>", "<cmd>Commits<enter>")
 vim.keymap.set("n", "<F9>", "<cmd>Rg<enter>")
 vim.keymap.set("n", "<F11>", "<cmd>GFiles<enter>")
@@ -65,7 +74,7 @@ vim.call('plug#end')
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force user to select one from the menu
-vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
+vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 
 -- Avoid showing extra messages when using completion
 vim.opt.shortmess:append('c')
@@ -97,91 +106,85 @@ vim.lsp.config.clangd = {
 	},
 }
 
+-- Coq related stuff
+require 'coq-lsp'.setup {
+	coq_lsp_nvim = {
+		-- to be added
+	},
+	lsp = {
+		-- coq-lsp server initialization configurations, defined here:
+		-- https://github.com/ejgallego/coq-lsp/blob/main/editor/code/src/config.ts#L3
+		-- Documentations are at https://github.com/ejgallego/coq-lsp/blob/main/editor/code/package.json.
+		init_options = {
+			show_notices_as_diagnostics = true,
+		},
+	},
+}
+
+vim.lsp.config.lua_ls = {
+	cmd = { 'lua-language-server' },
+	filetypes = { 'lua' },
+	-- Sets the "workspace" to the directory where any of these files is found.
+	root_markers = {
+		".luarc.json",
+		".luarc.jsonc",
+		".luacheckrc",
+		".stylua.toml",
+		".git",
+	},
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			},
+			workspace = {
+				library = {
+					"/usr/share/nvim/runtime/"
+				}
+			}
+		}
+	}
+}
+
 vim.lsp.enable('pylsp')
 vim.lsp.enable('clangd')
 vim.lsp.enable('ocamllsp ')
 vim.lsp.enable('ts_ls')
-
--- Coq related stuff
-require'coq-lsp'.setup {
-  coq_lsp_nvim = {
-    -- to be added
-  },
-  lsp = {
-    -- coq-lsp server initialization configurations, defined here:
-    -- https://github.com/ejgallego/coq-lsp/blob/main/editor/code/src/config.ts#L3
-    -- Documentations are at https://github.com/ejgallego/coq-lsp/blob/main/editor/code/package.json.
-    init_options = {
-      show_notices_as_diagnostics = true,
-    },
-  },
-}
-
-vim.lsp.config.lua_ls = {
-  on_init = function(client)
-    local path = client.workspace_folders[1].name
-    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
-      return
-    end
-
-    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-      runtime = {
-        -- Tell the language server which version of Lua you're using
-        -- (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT'
-      },
-      -- Make the server aware of Neovim runtime files
-      workspace = {
-        checkThirdParty = false,
-        --library = {
-        --  vim.env.VIMRUNTIME,
-        --  -- Depending on the usage, you might want to add additional paths here.
-        --  -- "${3rd}/luv/library"
-        --  -- "${3rd}/busted/library",
-        --}
-        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-        library = vim.api.nvim_get_runtime_file("", true)
-      }
-    })
-  end,
-  settings = {
-    Lua = {}
-  }
-}
+vim.lsp.enable('lua_ls')
 
 
 -- Setup Completion
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
-local cmp = require'cmp'
+local cmp = require("cmp")
 cmp.setup({
-  -- Enable LSP snippets
-  snippet = {
-    expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = {
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-    ['<Tab>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
-    })
-  },
+	-- Enable LSP snippets
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
+	mapping = {
+		['<S-Tab>'] = cmp.mapping.select_prev_item(),
+		['<Tab>'] = cmp.mapping.select_next_item(),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+		['<CR>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Insert,
+			select = true,
+		})
+	},
 
-  -- Installed sources
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-    { name = 'path' },
-    { name = 'buffer' },
-  },
-  window = {
-	  completion = cmp.config.window.bordered(),
-	  documentation = cmp.config.window.bordered(),
-  },
+	-- Installed sources
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' },
+		{ name = 'path' },
+		{ name = 'buffer' },
+	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 })
