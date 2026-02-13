@@ -1,5 +1,2 @@
 [preview]
 max_preview_size = 10000000000
-preview_script = "~/.config/joshuto/preview_file.sh"
-preview_shown_hook_script = "~/.config/joshuto/on_preview_shown"
-preview_removed_hook_script = "~/.config/joshuto/on_preview_removed.sh"
