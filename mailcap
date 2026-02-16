@@ -1,2 +1,4 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 application/pdf; zathura %s
+text/x-diff; cat %s | colordiff; copiousoutput;
+text/x-patch; cat %s | colordiff; copiousoutput;

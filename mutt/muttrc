@@ -1,4 +1,7 @@
 auto_view text/html
+auto_view text/x-patch
+auto_view text/x-diff
+set allow_ansi
 alternative_order text/plain text/enriched text/html
 set copy=no
 set editor=/usr/bin/nvim
