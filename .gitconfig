@@ -1,0 +1,15 @@
+[commit]
+	gpgsign = true
+[user]
+	signingkey = FF2B2DFB2B4A52C26C2CC9B648797EA19C19BED1
+	email = mroik@delayed.space
+	name = Mroik
+[core]
+	editor = nvim
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+[sendemail]
+	smtpEncryption = ssl
+	smtpUser = mroik@delayed.space
+	smtpServer = mail.delayed.space
+	smtpServerPort = 465
