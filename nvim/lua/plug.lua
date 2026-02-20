@@ -24,6 +24,9 @@ Plug('hrsh7th/vim-vsnip')
 -- Git symbols
 Plug('mhinz/vim-signify')
 
+-- Git blame
+Plug('FabijanZulj/blame.nvim')
+
 -- fuzzy finder
 Plug('junegunn/fzf.vim')
 

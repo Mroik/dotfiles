@@ -2,9 +2,10 @@ require("bindings")
 require("plug")
 require("lsp")
 require("autocomplete")
+require("extra_plug")
 vim.opt.number = true
 vim.opt.cc = "121"
-vim.opt.textwidth = 120
+-- vim.opt.textwidth = 120
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.mouse = "a"
