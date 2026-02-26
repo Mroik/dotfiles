@@ -1,0 +1,5 @@
+term screen-256color
+truecolor on
+altscreen on
+defscrollback 3000
+defutf8 on
