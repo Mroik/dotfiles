@@ -13,3 +13,6 @@
 	smtpUser = mroik@delayed.space
 	smtpServer = mail.delayed.space
 	smtpServerPort = 465
+[format]
+	coverLetter = auto
+	commitlistformat = log:[%(count)/%(total)] %s (%an)
