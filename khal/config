@@ -9,7 +9,7 @@ path = /home/mroik/.local/share/khal/calendars/google/d5q2sqbkc5m6iobe4dk6ur39ch
 type = calendar
 
 [[unimi]]
-path = /home/mroik/.local/share/khal/calendars/google/d39e820035ae37ee24cc39b45c2365fab50c5e15ec4a8d0ec65d608cced57ab5@group.calendar.google.com
+path = /home/mroik/.local/share/khal/calendars/google/b0c4f335c40891e15f245bf6e91d48606eaa27e6e83c6db2998fc8ab0cd55826@group.calendar.google.com
 type = calendar
 
 [[PSG]]
@@ -22,6 +22,14 @@ type = calendar
 
 [[polimovies]]
 path = /home/mroik/.local/share/khal/calendars/google/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
+type = calendar
+
+[[workout]]
+path = /home/mroik/.local/share/khal/calendars/google/3322bd2985951d875e258ea06cf157526898fdac2afddfe6aebf7e4c168501cf@group.calendar.google.com
+type = calendar
+
+[[git-dev-cycle]]
+path = /home/mroik/.local/share/khal/calendars/google/jfgbl2mrlipp4pb6ieih0qr3so@group.calendar.google.com
 type = calendar
 
 [locale]
