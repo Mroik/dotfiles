@@ -17,3 +17,4 @@
 	coverLetter = auto
 	commitlistformat = log:[%(count)/%(total)] %s (%an)
 	thread = shallow
+	useAutoBase = true
