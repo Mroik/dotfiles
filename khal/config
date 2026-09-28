@@ -20,12 +20,12 @@ type = calendar
 path = /home/mroik/.local/share/khal/calendars/google/vmqiqjttapof8d7l87l569m5bjf86lho@import.calendar.google.com
 type = calendar
 
-[[polimovies]]
-path = /home/mroik/.local/share/khal/calendars/google/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
+[[poul-courses]]
+path = /home/mroik/.local/share/khal/calendars/google/vrig1evs4n7b7vrhkcv9lahroeh8uknt@import.calendar.google.com
 type = calendar
 
-[[workout]]
-path = /home/mroik/.local/share/khal/calendars/google/3322bd2985951d875e258ea06cf157526898fdac2afddfe6aebf7e4c168501cf@group.calendar.google.com
+[[polimovies]]
+path = /home/mroik/.local/share/khal/calendars/google/84320f1db66b1126e3e209c6a0dc44df705d2c3e95c61507290861e9a0c017f4@group.calendar.google.com
 type = calendar
 
 [[git-dev-cycle]]
@@ -41,3 +41,7 @@ longdatetimeformat = %Y-%m-%d %I:%M %p
 
 [default]
 default_calendar = private
+enable_mouse = false
+
+[view]
+event_view_always_visible = true
